@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_userside/consts/theme_data.dart';
 import 'package:shop_userside/providers/theme_provider.dart';
+import 'package:shop_userside/root_screen.dart';
 import 'package:shop_userside/screens/home_screen.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: Styles.themeData(isDarkTheme: themeProvider.getDarkTheme, context: context),
-            home: HomeScreen(),
+            home: RootScreen(),
           );
         }
       ),
