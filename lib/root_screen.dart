@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
+
 import 'package:shop_userside/screens/cart_screen.dart';
 import 'package:shop_userside/screens/home_screen.dart';
 import 'package:shop_userside/screens/profile_screen.dart';
@@ -30,14 +30,15 @@ class _RootScreenState extends State<RootScreen> {
     return Scaffold(
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
-        controller: controller, children: screens),
+        controller: controller,
+        children: screens,
+      ),
       bottomNavigationBar: NavigationBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 10,
         height: kBottomNavigationBarHeight,
         selectedIndex: currentScreen,
         onDestinationSelected: (index) {
-          
           setState(() {
             currentScreen = index;
           });
@@ -45,23 +46,23 @@ class _RootScreenState extends State<RootScreen> {
         },
         destinations: [
           NavigationDestination(
-            selectedIcon: Icon(Icons.home_filled,fontWeight: FontWeight.bold,),
+            selectedIcon: Icon(Icons.home_filled, fontWeight: FontWeight.bold),
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-        
-           NavigationDestination(
-            selectedIcon: Icon(Icons.search,fontWeight: FontWeight.bold,),
+
+          NavigationDestination(
+            selectedIcon: Icon(Icons.search, fontWeight: FontWeight.bold),
             icon: Icon(Icons.search),
             label: 'Search',
           ),
-             NavigationDestination(
-            selectedIcon: Icon(Icons.shop_2,fontWeight: FontWeight.bold,),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.shop_2, fontWeight: FontWeight.bold),
             icon: Icon(Icons.shop_2_outlined),
             label: 'Cart',
           ),
-             NavigationDestination(
-            selectedIcon: Icon(Icons.person,fontWeight:FontWeight.bold,),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.person, fontWeight: FontWeight.bold),
             icon: Icon(Icons.person_2_outlined),
             label: 'Profile',
           ),
